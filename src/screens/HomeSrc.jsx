@@ -24,6 +24,20 @@ export default function HomeSrc({ navigation }) {
         </Button>
         <Button
           mode="contained"
+          onPress={() => navigation.navigate("Feed")}
+          style={styles.ButtonH}
+        >
+          Feed
+        </Button>
+        <Button
+          mode="contained"
+          onPress={() => navigation.navigate("Adicionar Postagem")}
+          style={styles.ButtonH}
+        >
+          Postar
+        </Button>
+        <Button
+          mode="contained"
           onPress={() => navigation.navigate("Recuperar")}
           style={styles.ButtonH}
         >

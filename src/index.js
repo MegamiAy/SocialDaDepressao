@@ -5,6 +5,7 @@ import LoginScreen from "./screens/LoginUser";
 import RecPass from "./screens/RecPass";
 import HomeSrc from "./screens/HomeSrc";
 import AddPost from "./screens/AddPost";
+import FeedSrc from "./screens/FeedSrc";
 
 const Stack = createNativeStackNavigator();
 

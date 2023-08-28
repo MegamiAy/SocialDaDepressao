@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 import React, { useState } from "react";
-import { Button } from "react-native-paper";
+import { Button, TextInput } from "react-native-paper";
 import styles from "../utils/style";
 
 export default function AddPost({ navigation }) {

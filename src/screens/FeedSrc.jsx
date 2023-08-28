@@ -10,16 +10,13 @@ export default function FeedSrc({ navigation }) {
     return (
         <View>
             <View style={styles.BodyH}>
-                <Text style={styles.Int}>Publique suas fotos:</Text>
-                <TextInput
-                    label="Sua Mensagem"
-                    placeholder="Digite sua mensagem"
-                    multiline={false}
-                    value={msg}
-                    onChangeText={setMsg}
-                    style={styles.InputL}
-                />
-                
+                {/* <Fieldset> */}
+
+                    {/* nome do usuário */}
+                    {/* foto da postagem*/}
+                    {/* mensagem da postagem */}
+
+                {/* </Fieldset> */}
             </View>
         </View>
     );
