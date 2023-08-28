@@ -4,6 +4,7 @@ import { TextInput, Button } from "react-native-paper";
 import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../config/firebase";
+import styles from "../utils/style";
 
 export default function CreateScreen({ navigation }) {
     const [nome, setNome] = useState("");
@@ -39,7 +40,8 @@ export default function CreateScreen({ navigation }) {
                     placeholder="Nome da Instituição ..."
                     value={nome}
                     onChangeText={setNome}
-                    label="nome" />
+                    label="nome" 
+                    style={styles.InputL}/>
                 <TextInput
                     placeholder="Email da Instituição ..."
                     value={email}
