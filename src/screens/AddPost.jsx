@@ -19,7 +19,16 @@ export default function AddPost({ navigation }) {
                     onChangeText={setMsg}
                     style={styles.InputL}
                 />
+
                 
+
+                <Button
+                    mode="contained"
+                    // onPress={handlePasswordReset}
+                    style={styles.ButtonC}
+                >
+                    Postar
+                </Button>
             </View>
         </View>
     );
