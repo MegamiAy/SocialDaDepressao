@@ -7,6 +7,8 @@ export default function AddPost({ navigation }) {
 
     const [msg, setMsg] = useState("");
 
+    
+
     return (
         <View>
             <View style={styles.BodyH}>
