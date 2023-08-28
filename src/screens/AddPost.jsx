@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Button } from "react-native-paper";
 import styles from "../utils/style";
 
-export default function FeedSrc({ navigation }) {
+export default function AddPost({ navigation }) {
 
     const [msg, setMsg] = useState("");
 
