@@ -1,29 +1,30 @@
 import { View, Text } from "react-native";
 import React from "react";
 import { Button } from "react-native-paper";
+import styles from "../utils/style";
 
 export default function HomeSrc({ navigation }) {
   return (
     <View>
-      <Header />
-      <View >
+      <View style={styles.BodyH}>
         <Button
           onPress={() => navigation.navigate("Login")}
           mode="contained"
+          style={styles.ButtonH}
         >
           Login
         </Button>
         <Button
           mode="contained"
-          onPress={() => navigation.navigate("Registrar")}
-          color="#000"
+          onPress={() => navigation.navigate("Cadastro")}
+          style={styles.ButtonH}
         >
-          Cadastrar
+          Cadastro
         </Button>
         <Button
           mode="contained"
           onPress={() => navigation.navigate("Recuperar")}
-          color="#000"
+          style={styles.ButtonH}
         >
           Recuperar senha
         </Button>

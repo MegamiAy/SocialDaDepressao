@@ -34,7 +34,6 @@ export default function CreateScreen({ navigation }) {
 
     return (
         <View>
-            <Header />
             <View>
                 <TextInput
                     placeholder="Nome da Instituição ..."
