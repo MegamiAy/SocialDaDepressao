@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
         marginTop:20,
         justifyContent:"center",
         backgroundColor:"#000",
-        borderRadius:7,
+        borderRadius:0,
     },
 
     ButtonL: {
@@ -26,7 +26,16 @@ export const styles = StyleSheet.create({
         marginTop:20,
         justifyContent:"center",
         backgroundColor:"#000",
-        borderRadius:7,
+        borderRadius:0,
+    },
+    
+    ButtonC: {
+        width:"80%",
+        height:50,
+        marginTop:20,
+        justifyContent:"center",
+        backgroundColor:"#000",
+        borderRadius:0,
     },
 
     InputL: {
@@ -40,6 +49,12 @@ export const styles = StyleSheet.create({
 
     Touch: {
         marginTop: 5,
+        marginBottom: 5,
+    },
+
+    Int: {
+        marginTop: 10,
+        fontSize: 20,
     }
 
 })

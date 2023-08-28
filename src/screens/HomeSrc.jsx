@@ -7,6 +7,7 @@ export default function HomeSrc({ navigation }) {
   return (
     <View>
       <View style={styles.BodyH}>
+        <Text style={styles.Int}>Navegue pelo app aqui:</Text>
         <Button
           onPress={() => navigation.navigate("Login")}
           mode="contained"

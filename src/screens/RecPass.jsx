@@ -2,6 +2,7 @@ import { View } from "react-native";
 import { Button, TextInput } from "react-native-paper";
 import { passwordReset } from "../config/firebase";
 import { useState } from "react";
+import styles from "../utils/style";
 
 export default function RecPass({ navigation }) {
   const [email, setEmail] = useState("");
@@ -21,17 +22,19 @@ export default function RecPass({ navigation }) {
 
   return (
     <View>
-      <View>
+      <View style={styles.BodyH}>
       <TextInput
         label="E-mail"
         placeholder="Digite seu e-mail..."
         multiline={false}
         value={email}
         onChangeText={setEmail}
+        style={styles.InputL}
       /> 
       <Button
         mode="contained"
         onPress={handlePasswordReset}
+        style={styles.ButtonC}
       >
         Recuperar Senha
       </Button>

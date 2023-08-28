@@ -14,7 +14,7 @@ export default function LoginScreen({navigation}){
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 console.log("Usuário UID: ", user.uid)
-                navigation.navigate('VerMaisScreen')
+                navigation.navigate('Home')
             } else {
                 console.log("Usuário não logado")
             }
@@ -27,7 +27,7 @@ export default function LoginScreen({navigation}){
         signInWithEmailAndPassword(auth, email, senha)
             .then((userCredential) => {
                 const user = userCredential.user;
-                navigation.navigate('VerMaisScreen')
+                navigation.navigate('Home')
                 console.log(user)
             })
             .catch((error) => {
