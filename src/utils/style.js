@@ -18,6 +18,7 @@ export const styles = StyleSheet.create({
         justifyContent:"center",
         backgroundColor:"#000",
         borderRadius:0,
+        color: "#fff",
     },
 
     ButtonL: {
@@ -35,6 +36,7 @@ export const styles = StyleSheet.create({
         marginTop:20,
         justifyContent:"center",
         backgroundColor:"#000",
+        color: "#fff",
         borderRadius:0,
     },
 

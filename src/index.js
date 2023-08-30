@@ -19,6 +19,7 @@ export default function RootNavigation() {
                 <Stack.Screen name="Adicionar Postagem" component={AddPost} />
                 <Stack.Screen name="Feed" component={FeedSrc} />
                 <Stack.Screen name="Recuperar" component={RecPass} />
+               
             </Stack.Navigator>
         </NavigationContainer>
     );

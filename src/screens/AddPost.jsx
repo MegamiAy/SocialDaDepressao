@@ -1,15 +1,15 @@
-import { View, Text, Button } from "react-native";
-import React, { useState } from "react";
-import {TextInput } from "react-native-paper";
-import styles from "../utils/style";
-import { collection } from "firebase/firestore";
+import { Platform, View, Image } from "react-native";
+import { TextInput, Button } from "react-native-paper";
+import { addDoc, collection } from "firebase/firestore";
+import { useState } from "react";
 import { db } from "../config/firebase";
+import * as ImagePicker from "expo-image-picker";
+import styles from "../utils/style";
 
-export default function AddPost({ navigation }) {
-
+export default function AddPost() {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
-    const [image, setImage] = useState(null);
+    const [image, setImage] = useState(null); // Moved outside of inserirPost
 
     const pickImage = async () => {
         const result = await ImagePicker.launchImageLibraryAsync({
@@ -67,43 +67,43 @@ export default function AddPost({ navigation }) {
 
     const ImageComponent = () => {
         if (Platform.OS === "web") {
-            return <img src={image} />;
+            return <img src={image} style={{ width: 200, height: 200 }} />;
         } else {
             return (
-                <Image source={{ uri: image }} />
+                <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />
             );
         }
     };
 
     return (
         <View>
-            <View style={styles.BodyH}>
-                <Text style={styles.Int}>Publique suas fotos:</Text>
-                <TextInput 
-                label="Titulo" 
-                value={title} 
-                onChangeText={setTitle} 
-                style={styles.InputL}
-                />
-                <TextInput
-                    label="Descrição"
-                    value={content}
-                    onChangeText={setContent}
-                    style={styles.InputL}
-                />
-                {image && <ImageComponent />}
-
-                <Button title="Escolha a Imagem"
-                onPress={pickImage} 
-                // style={styles.ButtonC}
-                />
-                <Button
-                    mode="contained"
-                    onPress={inserirPost}
-                    // style={styles.ButtonC}
-                    disabled={!title || !content}
-                    title="Postar"
-                />
+            <View>
+                <View style={styles.BodyH}>
+                    <TextInput label="Titulo"
+                        value={title}
+                        onChangeText={setTitle}
+                        style={styles.InputL}
+                    />
+                    <TextInput
+                        label="Descrição"
+                        value={content}
+                        onChangeText={setContent}
+                        style={styles.InputL}
+                    />
+                    {image && <ImageComponent />}
+                    <Button 
+                    // title="Escolha uma imagem" 
+                    onPress={pickImage}
+                    style={styles.ButtonH}
+                    >Escolha uma imagem</Button>
+                    <Button
+                        // title="Criar um Post"
+                        onPress={inserirPost}
+                        disabled={!title || !content}
+                        // mode="outlined"
+                        style={styles.ButtonH}
+                    >Postar</Button>
+                </View>
             </View>
         </View>
     );
