@@ -5,6 +5,7 @@ import { collection, deleteDoc, doc, getDocs, increment, updateDoc } from "fireb
 import { View } from "react-native-web";
 import { ScrollView } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import styles from "../utils/style";
 
 
 const Post = ({ navigation }) => {
@@ -50,46 +51,43 @@ const Post = ({ navigation }) => {
     <ScrollView>
       <View>
         {post.map((post) => (
-          <Card key={post.id} style={{ backgroundColor: "gray", margin: 10 }}>
+          <Card key={post.id} style={styles.CardB}>
             {post.Image && <Card.Cover source={{ uri: post.Image }} />}
             <Card.Content>
-              <Text style={{ color: "#fff" }} variant="titleLarge">
+              <Text style={styles.CardT} variant="titleLarge">
                 {post.Title}
               </Text>
-              <Text style={{ color: "#fff" }} variant="bodyMedium">
+              <Text style={styles.CardT} variant="bodyMedium">
                 {post.Content}
               </Text>
             </Card.Content>
             <Card.Actions>
               {/* ... (Edit Button) */}
               <Button
-                style={{
-                  alignItems: "center",
-                  width: 50,
-                  height: 50,
-                  borderRadius: 2 * 70,
-                  paddingTop: 3,
-                }}
+                style={[styles.ButtonC, {
+                    marginRight: -25
+                }]}
                 mode="text"
                 textColor="#fff"
                 onPress={() => deletePost(post.id)}
               >
                 <MaterialCommunityIcons name="close" size={35} />
-                <Text>Para deletar, clique no X</Text> 
+                <Text style={styles.CardT}></Text> 
               </Button>
               <Button
                 style={{
                   alignItems: "center",
+                  justifyContent: "center",
+                  alignContent: 'center',
                   width: 50,
                   height: 50,
-                  borderRadius: 2 * 70,
+                  borderRadius: 0,
                   paddingTop: 3,
                   }}
                   mode="text"
                   textColor="#fff"
                   onPress={() => likePost(post.id)}
                 >
-                {/* <MaterialCommunityIcons name="heart" size={30} color="white" /> */}
                 </Button>
             </Card.Actions>
           </Card>

@@ -57,6 +57,19 @@ export const styles = StyleSheet.create({
     Int: {
         marginTop: 10,
         fontSize: 20,
+    },
+
+    CardT: {
+        color: "#fff",
+    },
+
+    CardB: {
+        // backgroundColor: "#00f",
+        justifyContent: "center",
+        alignContent: 'center',
+        backgroundColor: "#484d50", 
+        margin: 10,
+        borderRadius: 0,
     }
 
 })
