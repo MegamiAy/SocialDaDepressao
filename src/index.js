@@ -6,6 +6,7 @@ import RecPass from "./screens/RecPass";
 import HomeSrc from "./screens/HomeSrc";
 import AddPost from "./screens/AddPost";
 import FeedSrc from "./screens/FeedSrc";
+import Post from "./components/Post";
 
 const Stack = createNativeStackNavigator();
 
@@ -19,7 +20,7 @@ export default function RootNavigation() {
                 <Stack.Screen name="Adicionar Postagem" component={AddPost} />
                 <Stack.Screen name="Feed" component={FeedSrc} />
                 <Stack.Screen name="Recuperar" component={RecPass} />
-               
+                <Stack.Screen name="Post" component={Post} />
             </Stack.Navigator>
         </NavigationContainer>
     );
