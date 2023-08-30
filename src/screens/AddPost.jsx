@@ -1,6 +1,6 @@
 import { View, Text, Button } from "react-native";
 import React, { useState } from "react";
-import { Button, TextInput } from "react-native-paper";
+import {TextInput } from "react-native-paper";
 import styles from "../utils/style";
 import { collection } from "firebase/firestore";
 import { db } from "../config/firebase";
@@ -82,23 +82,28 @@ export default function AddPost({ navigation }) {
                 <TextInput 
                 label="Titulo" 
                 value={title} 
-                onChangeText={setTitle} />
+                onChangeText={setTitle} 
+                style={styles.InputL}
+                />
                 <TextInput
                     label="Descrição"
                     value={content}
                     onChangeText={setContent}
+                    style={styles.InputL}
                 />
                 {image && <ImageComponent />}
 
-                <Button title="Pick an image" onPress={pickImage} />
+                <Button title="Escolha a Imagem"
+                onPress={pickImage} 
+                // style={styles.ButtonC}
+                />
                 <Button
                     mode="contained"
                     onPress={inserirPost}
-                    style={styles.ButtonC}
+                    // style={styles.ButtonC}
                     disabled={!title || !content}
-                >
-                    Postar
-                </Button>
+                    title="Postar"
+                />
             </View>
         </View>
     );
